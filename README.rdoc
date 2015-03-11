@@ -1,0 +1,7 @@
+== RAILS TODO LIST API
+
+The point of this repo is to provide people with a simple todo list api. It is perfect for trying to practice backbone or angular and see how it works with rails.
+
+I will be pushing this to a website soon. I will put a link up as soon as it is done.
+
+Thanks! - Corey Ghilarducci
