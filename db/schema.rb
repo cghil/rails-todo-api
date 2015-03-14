@@ -16,15 +16,9 @@ ActiveRecord::Schema.define(version: 20150314003846) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "api_keys", force: true do |t|
-    t.string   "token"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "todos", force: true do |t|
     t.text     "description"
-    t.boolean  "status"
+    t.boolean  "status",      default: false
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
