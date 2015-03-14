@@ -1,10 +1,11 @@
 class TodosController < ApplicationController
   def index
     @todos = Todo.all
-    render json: @product
+    render json: @todos
   end
 
   def new
+    
   end
 
   def create
