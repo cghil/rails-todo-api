@@ -4,19 +4,35 @@ class TodosController < ApplicationController
     render json: @todos
   end
 
-  def new
-    
-  end
-
   def create
+    @todos = Todo.create(todo_params)
+    render json: { alert: "New item has been created"}
   end
 
-  def update
+  def done
+    @todo = Todo.find(params[:id])
+    @todo.done = true
   end
 
   def edit
   end
 
-  def destroy
+  def not_done
+    @todo = Todo.find(params[:id])
+    @todo.done = false
   end
+
+  def destroy
+    @todo = Todo.find(params[:id])
+    @todo.destroy
+    render json: { alert: "Item has been removed" }
+  end
+
+  private
+    def todo_params
+      params.require(:todo).permit(:description, :user_id)
+    end
+    def todo_update_params
+      params.require(:todo).permit(:done)
+    end
 end

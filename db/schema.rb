@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20150314003846) do
 
   create_table "todos", force: true do |t|
     t.text     "description"
-    t.boolean  "status",      default: false
+    t.boolean  "done",        default: false
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
