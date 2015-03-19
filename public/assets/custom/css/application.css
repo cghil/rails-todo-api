@@ -1,0 +1,29 @@
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+.text-center {
+  text-align: center;
+}
+.text-justify {
+  text-align: justify;
+}
+
+.side-menu-custom {
+	display: inline-block;
+	background: #191818;
+}
+
+.side-menu-custom a{
+	color: #999;
+  border: none;
+  white-space: normal;
+  padding: 0.625em 1em;
+}
+
+.pure-menu-open {
+  background: transparent;
+  border: 0;
+}
