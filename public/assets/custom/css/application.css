@@ -1,3 +1,27 @@
+.header {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 75px;
+  color: rgba(175, 47, 47, 0.4);
+  font-weight: 100;
+  text-transform: lowercase;
+}
+
+#new-todo {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  
+  height: 65px;
+
+}
+.todo-list-item {
+
+}
+
+.todo-list-footer {
+
+}
+
 .text-left {
   text-align: left;
 }
@@ -14,6 +38,7 @@
 .side-menu-custom {
 	display: inline-block;
 	background: #191818;
+  height: 100vh;
 }
 
 .side-menu-custom a{
@@ -26,4 +51,9 @@
 .pure-menu-open {
   background: transparent;
   border: 0;
+}
+
+.layer-paper {
+  background: #fcf0ad;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.15), /* The top layer shadow */ 0 10px 0 -5px #fcf0ad, /* the second layer */ 0 10px 1px -4px rgba(0,0,0,0.15), /* The second layer shadow */ 0 20px 0 -10px #fcf0ad, /* the third layer */ 0 20px 1px -9px rgba(0,0,0,0.15); /*the third layer shadow*/
 }
