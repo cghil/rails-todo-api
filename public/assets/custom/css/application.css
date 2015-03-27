@@ -1,3 +1,94 @@
+.helveticaneue {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; 
+}
+
+.inline-element {
+  display: inline;
+}
+
+.font-please {
+  z-index: 2;
+}
+
+.selected-category {
+
+}
+
+.header {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 75px;
+  color: rgba(175, 47, 47, 0.4);
+  font-weight: 100;
+  text-transform: lowercase;
+}
+
+.yellow-notebook-page {
+  background: #fcf0ad;
+}
+
+#input-box-new-todo {
+  background: #fcf0ad;
+  border-bottom: 1px solid #87CEEB;
+}
+
+.blue-border-bottom {
+  border-bottom: 1px solid #87CEEB;
+}
+
+.margin-left-20 {
+  margin-left: 20px;
+}
+
+.margin-right-20 {
+  margin-right: 20px;
+}
+
+.transparent-1-4 {
+  opacity: 0.25;
+}
+
+.remove-bullets {
+  list-style-type: none;
+}
+
+#new-todo {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  height: 65px;
+  background: #fcf0ad;
+/*  margin-left: 60px;*/
+  padding: 0 0 0 0;
+  border: none;
+  box-shadow: 0px -2px 1px 0px #fcf0ad inset;
+}
+
+::-webkit-input-placeholder { /* WebKit browsers */
+    color: rgb(77, 77, 77);
+    font-style: italic;
+    font-weight: 100;
+}
+
+.todo-item {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  border-bottom: 1px solid #87CEEB;
+  font-size: 25px;
+  height: 65px;
+}
+
+.todo-list-footer {
+
+}
+
+.center-todo {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.overflow-todo {
+  overflow: scroll;
+}
 .text-left {
   text-align: left;
 }
@@ -14,6 +105,7 @@
 .side-menu-custom {
 	display: inline-block;
 	background: #191818;
+  height: 100vh;
 }
 
 .side-menu-custom a{
@@ -26,4 +118,13 @@
 .pure-menu-open {
   background: transparent;
   border: 0;
+}
+
+.layer-paper {
+  background: #fcf0ad;
+  box-shadow: 0 1px 0px rgba(0,0,0,0.15), /* The top layer shadow */ 0 10px 0 -5px #fcf0ad, /* the second layer */ 0 10px 1px -4px rgba(0,0,0,0.15), /* The second layer shadow */ 0 20px 0 -10px #fcf0ad, /* the third layer */ 0 20px 1px -9px rgba(0,0,0,0.15); /*the third layer shadow*/
+}
+
+.debugger {
+  border-radius: solid 1px red;
 }
