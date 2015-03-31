@@ -4,17 +4,17 @@ $(document).ready(function(){
 		var $inputBoxDiv = $('#input-box-new-todo');
 		var $inputBox = $('#new-todo');
 		$inputBoxDiv.css("width", width);
-		$inputBox.css("width", width-63)
+		$inputBox.css("width", width-63);
 	}
 	$(window).resize(inputBoxWithChange);
 	inputBoxWithChange();
-
 
 	function toggleSideMenu(){
 		var $menuToggleButton = $('#toggle-menu-button')
 		var $body = $('#body');
 		var $menu = $('#menu');
 		var $mainGrid = $('#maingrid');
+		var $inputBoxDiv = $('#input-box-new-todo');
 		$menuToggleButton.on('click', hideSideMenu)
 		
 		function revealSideMenu(){

@@ -102,14 +102,8 @@
   text-align: justify;
 }
 
-.side-menu-custom {
-	display: inline-block;
-	background: #191818;
-  height: 100vh;
-}
-
 .side-menu-custom a{
-	color: #999;
+  color: #999;
   border: none;
   white-space: normal;
   padding: 0.625em 1em;
@@ -127,4 +121,10 @@
 
 .debugger {
   border-radius: solid 1px red;
+}
+
+.side-menu-custom {
+	display: inline-block;
+	background: #191818;
+  height: 100vh;
 }
