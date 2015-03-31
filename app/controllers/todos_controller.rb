@@ -28,6 +28,8 @@ class TodosController < ApplicationController
   end
 
   def update
+    @todo = Todo.find(params[:id])
+    @todo.update(todo_update_params)
   end
 
   def destroy
@@ -43,6 +45,6 @@ class TodosController < ApplicationController
       params.require(:todo).permit(:description, :user_id)
     end
     def todo_update_params
-      params.require(:todo).permit(:done)
+      params.require(:todo).permit(:done, :description)
     end
 end
