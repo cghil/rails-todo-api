@@ -1,10 +1,7 @@
 var app = app || {};
 
 app.Todo = Backbone.Model.extend({
-	defaults: {
-		description: '',
-		done: false
-	},
+	urlRoot: '/todos',
 
 	toggleDone: function(){
 		this.save({

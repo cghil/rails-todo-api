@@ -4,7 +4,14 @@ var TodoList = Backbone.Collection.extend({
 	
 	model: app.Todo,
 
-	url: '/todos'
+	url: '/todos',
+
+	completed: function(){
+		return this.where({done: true});
+	},
+	active: function(){
+		return this.where({done: false});
+	}
 });
 
 app.Todos = new TodoList();
