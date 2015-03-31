@@ -15,7 +15,8 @@ $(document).ready(function(){
 		var $menu = $('#menu');
 		var $mainGrid = $('#maingrid');
 		var $inputBoxDiv = $('#input-box-new-todo');
-		$menuToggleButton.on('click', hideSideMenu)
+		var $inputBox = $('#new-todo');
+		$menuToggleButton.on('click', hideSideMenu);
 		
 		function revealSideMenu(){
 			$menuToggleButton.unbind('click');
@@ -23,6 +24,9 @@ $(document).ready(function(){
 			$mainGrid.addClass('pure-g');
 			$menu.addClass('pure-u-1-8');
 			$body.addClass('pure-u-7-8');
+			var width = $('.layer-paper').width();
+			$inputBoxDiv.css("width", width);
+			$inputBox.css("width", width-63);
 			$menuToggleButton.on('click', hideSideMenu);
 		}
 
@@ -31,10 +35,11 @@ $(document).ready(function(){
 			$menu.removeClass('pure-u-1-8');
 			$mainGrid.removeClass('pure-g');
 			$menu.hide();
+			var postNoteWidth = $('.yellow-notebook-page').width();
+			$inputBoxDiv.width(postNoteWidth);
 			$menuToggleButton.unbind('click');
 			$menuToggleButton.on('click', revealSideMenu);
 		}
 	}
-
 	toggleSideMenu();
 });
