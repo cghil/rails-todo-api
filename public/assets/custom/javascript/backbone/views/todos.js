@@ -21,12 +21,18 @@ app.TodoView = Backbone.View.extend({
 	render: function(){
 		this.$el.html( this.template( this.model.attributes) );
 		if (this.model.get('done')){
-			var templateCheckMark = _.template("<i class='fa fa-check-circle-o margin-left-20 margin-right-20'><i/>");
-			var $toggleToCheck = this.$el.find('.toggle-done')
-			$toggleToCheck.html(templateCheckMark)
+			this.makeItLookCompleted()
 		}
 		// notice how we are return this, we are returning the instance of our class
 		return this
+	},
+
+	makeItLookCompleted: function(){
+		var $toggleToCheck = this.$el.find('.toggle-done');
+		var $description = this.$el.find('.current-item-description');
+		$description.addClass('completed')
+		var templateCheckMark = _.template("<a href='#'><i class='fa fa-check-circle-o margin-left-20 margin-right-20 transparent-1-4'><i/></a>");
+		$toggleToCheck.html(templateCheckMark)
 	},
 
 	changeToCompleted: function(){

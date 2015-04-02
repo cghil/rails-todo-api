@@ -31,12 +31,9 @@ app.AppView = Backbone.View.extend({
 	// appending its element to the div todo-list-items
 	addOne: function(todo){
 		var  todoView = new app.TodoView({ model : todo, tagName: 'div', className: 'single-todo-item' });
-		debugger
 		$('#todo-list-items').append( todoView.render().el );
 		if (todoView.model.get('done')) {
-			var templateCheckMark = _.template("<i class='fa fa-check-circle-o margin-left-20 margin-right-20'><i/>");
-			todoView.$el.find('.toggle-done').html(templateCheckMark);
-			console.log('there is a finished todo');
+			todoView.makeItLookCompleted()
 		}
 	},
 
