@@ -13,16 +13,13 @@
 	<div class="pure-g" id="maingrid">
 		<div class="pure-u-1-8" id="menu">
 			<div class="pure-menu side-menu-custom">
-		    <span class="pure-menu-heading">todo, please.</span>
+		    <span class="pure-menu-heading custom-menu-header">todo, please.</span>
 
 		    <ul class="pure-menu-list">
-		        <li class="pure-menu-item"><a href="#" class="pure-menu-link">Flickr</a></li>
-		        <li class="pure-menu-item"><a href="#" class="pure-menu-link">Messenger</a></li>
-		        <li class="pure-menu-item"><a href="#" class="pure-menu-link">Sports</a></li>
-		        <li class="pure-menu-item"><a href="#" class="pure-menu-link">Finance</a></li>
-		        <li class="pure-menu-heading">About Me</li>
-		        <li class="pure-menu-item"><a href="#" class="pure-menu-link">Games</a></li>
-		        <li class="pure-menu-item"><a href="#" class="pure-menu-link">News</a></li>
+		        <li class="pure-menu-item"><a href="https://github.com/cghil/rails-todo-api" class="pure-menu-link"> About </a></li>
+		        <li class="pure-menu-heading custom-menu-header">Useful Links</li>
+		        <li class="pure-menu-item"><a href="https://miguelmota.com/blog/getting-started-with-backbonejs/" class="pure-menu-link">Getting Started w/ Backbone</a></li>
+		        <li class="pure-menu-heading custom-menu-header">About Me</li>
 		        <li class="pure-menu-item"><a href="#" class="pure-menu-link">OMG!</a></li>
 		    </ul>
 			</div>
@@ -31,7 +28,7 @@
 			<div class="pure-g">
 				<div class="pure-u-1-4"></div>
 				
-				<div class="pure-u-1-2">
+				<div class="pure-u-1-2" id='todoapp'>
 					<div class="text-center">
 						<h1 class='header'>todo, please.</h1>
 					</div>
@@ -78,7 +75,7 @@
 	<script type="text/template" id="item-template">
 		<div class="todo-item blue-border-bottom">
 			<div class="pure-g center-todo">
-				<div class="pure-u-1-8"><i class="fa fa-circle-thin margin-left-20 margin-right-20 transparent-1-4"></i></div>
+				<div class="pure-u-1-8 toggle-done"><i class="fa fa-circle-thin margin-left-20 margin-right-20 transparent-1-4"></i></div>
 				<div class="pure-u-3-4"><span class="edit-item edit-description"><%=description%></span></div>
 				<div class="pure-u-1-8"></div>
 			</div>
