@@ -7,7 +7,7 @@ app.TodoView = Backbone.View.extend({
 	template: _.template( $('#item-template').html() ),
 
 	initialize: function(){
-
+		this.listenTo(this.model, 'change', this.render)
 	},
 
 	events: {

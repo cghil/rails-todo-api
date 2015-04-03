@@ -8,16 +8,25 @@ app.AppView = Backbone.View.extend({
 	el: '#todoapp',
 
 	events: {
-		'keypress #new-todo': 'createOnEnter'
-		// 'click #new-todo': 'clickedThisFuckingThing'
+		'keypress #new-todo': 'createOnEnter',
+		'click #toggle-all': 'toggleAllToComplete'
 	},
 
 	initialize: function(){
-		// this.listenTo(app.Todos, 'add', this.addOne)
+		var todos = app.Todos
 		this.$input = this.$('#new-todo');
 		this.listenTo(app.Todos, 'add', this.addOne)
 		this.listenTo(app.Todos, 'reset', this.addAll);
-		app.Todos.fetch();
+		todos.fetch();
+	},
+
+	render: function() {
+		var todos = app.Todos
+		var completed = todos.completed().length
+		if (todos.length === completed) {
+			this.showAllAreCompleted();
+		}
+// need to finish render function
 	},
 
 	newAttributes: function(){
@@ -25,6 +34,34 @@ app.AppView = Backbone.View.extend({
 			description: this.$input.val().trim(),
 			done: false
 		};
+	},
+
+	showAllAreCompleted: function(){
+		this.$el.find('#toggle-all').removeClass('fa-circle-o').addClass('fa-bullseye');
+	},
+
+	toggleAllToComplete: function(){
+		var todos = app.Todos.models;
+		todos.forEach(saveTodo)
+		function saveTodo(todo){
+			todo.set({'done': true});
+			todo.save();
+		}
+		this.showAllAreCompleted();
+	},
+
+	showAllAreActive: function(){
+		this.$el.find('#toggle-all').removeClass('fa-bullseye').addClass('fa-circle-o');
+	},
+
+	toggleAllToActive: function(){
+		var todos = app.Todos.models;
+		todos.forEach(saveTodo)
+		function saveTodo(todo){
+			todo.set({'done': false});
+			todo.save();
+		}
+		this.showAllAreActive();
 	},
 
 	// add a single todo item to the list by creating a view
