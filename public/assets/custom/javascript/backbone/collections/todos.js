@@ -11,6 +11,10 @@ var TodoList = Backbone.Collection.extend({
 	},
 	active: function(){
 		return this.where({done: false});
+	},
+
+	comparator: function(todo){
+		return todo.get('id');
 	}
 });
 

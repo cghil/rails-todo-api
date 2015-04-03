@@ -6,12 +6,28 @@
   display: inline;
 }
 
+.current-item-description {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 24px;
+}
+
+.completed {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
 .font-please {
   z-index: 2;
 }
 
 .selected-category {
 
+}
+
+.custom-menu-header {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #FFFFFF;
+  border-bottom: 1px #333333 solid;
 }
 
 .header {
