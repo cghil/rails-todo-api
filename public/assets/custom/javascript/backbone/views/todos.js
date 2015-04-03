@@ -4,11 +4,6 @@ app.TodoView = Backbone.View.extend({
 
 	className: 'single-todo-item',
 
-	events: {
-		'dblclick .edit-description': 'edit',
-		'mouseover .todo-item': 'popDeleteButton'
-	},
-
 	template: _.template( $('#item-template').html() ),
 
 	initialize: function(){
@@ -16,7 +11,9 @@ app.TodoView = Backbone.View.extend({
 	},
 
 	events: {
-		'click .toggle-done': 'changeToCompleted'
+		'click .toggle-done': 'changeToCompleted',
+		'dblclick .edit-description': 'edit',
+		'mouseover .todo-item': 'popDeleteButton'
 	},
 
 	render: function(){
