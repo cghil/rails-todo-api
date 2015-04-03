@@ -30,10 +30,10 @@ app.AppView = Backbone.View.extend({
 	// add a single todo item to the list by creating a view
 	// appending its element to the div todo-list-items
 	addOne: function(todo){
-		var  todoView = new app.TodoView({ model : todo, tagName: 'div', className: 'single-todo-item' });
+		var  todoView = new app.TodoView({ model : todo });
 		$('#todo-list-items').append( todoView.render().el );
 		if (todoView.model.get('done')) {
-			todoView.makeItLookCompleted()
+			todoView.makeCompleted()
 		}
 	},
 

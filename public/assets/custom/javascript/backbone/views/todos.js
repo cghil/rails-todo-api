@@ -2,10 +2,11 @@ var app = app || {};
 
 app.TodoView = Backbone.View.extend({
 
-	// className: 'single-todo',
+	className: 'single-todo-item',
 
 	events: {
-		'dblclick .edit-description': 'edit'
+		'dblclick .edit-description': 'edit',
+		'mouseover .todo-item': 'popDeleteButton'
 	},
 
 	template: _.template( $('#item-template').html() ),
@@ -21,13 +22,18 @@ app.TodoView = Backbone.View.extend({
 	render: function(){
 		this.$el.html( this.template( this.model.attributes) );
 		if (this.model.get('done')){
-			this.makeItLookCompleted()
+			this.makeCompleted()
 		}
 		// notice how we are return this, we are returning the instance of our class
 		return this
 	},
 
-	makeItLookCompleted: function(){
+	popDeleteButton: function(){
+		this.$el.find('.description-container')
+		debugger;
+	},
+
+	makeCompleted: function(){
 		var $toggleToCheck = this.$el.find('.toggle-done');
 		var $description = this.$el.find('.current-item-description');
 		$description.addClass('completed')
@@ -47,14 +53,6 @@ app.TodoView = Backbone.View.extend({
 
 	edit: function(){
 		console.log('hope this works');
-	},
-
-	log: function(){
-		console.log('yup this is a click')
-	},
-
-	createOnEnter: function(){
-
 	}
 
 });
