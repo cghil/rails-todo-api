@@ -50,18 +50,18 @@ app.AppView = Backbone.View.extend({
 		this.showAllAreCompleted();
 	},
 
-	showAllAreActive: function(){
+	showSomeAreActive: function(){
 		this.$el.find('#toggle-all').removeClass('fa-bullseye').addClass('fa-circle-o');
 	},
 
-	toggleAllToActive: function(){
+	toggleSomeToActive: function(){
 		var todos = app.Todos.models;
 		todos.forEach(saveTodo)
 		function saveTodo(todo){
 			todo.set({'done': false});
 			todo.save();
 		}
-		this.showAllAreActive();
+		this.showSomeAreActive();
 	},
 
 	// add a single todo item to the list by creating a view
