@@ -11,9 +11,8 @@ app.TodoView = Backbone.View.extend({
 	},
 
 	events: {
-		'click .toggle-done': 'changeToCompleted',
-		'dblclick .edit-description': 'edit',
-		'mouseover .todo-item': 'popDeleteButton'
+		'mouseover .single-todo-item': 'showDeleteButton',
+		'click .toggle-done': 'changeToCompleted'
 	},
 
 	render: function(){
@@ -25,17 +24,18 @@ app.TodoView = Backbone.View.extend({
 		return this
 	},
 
-	popDeleteButton: function(){
-		this.$el.find('.description-container')
+	showDeleteButton: function(){
 		debugger;
+		$containerDescription = this.$el.find('.description-container')
+		$("<button class='button-xsmall pure-button button-error'><i class='fa fa-trash-o'></i> Delete</button>").appendTo($containerDescription)
 	},
 
 	makeCompleted: function(){
 		var $toggleToCheck = this.$el.find('.toggle-done');
 		var $description = this.$el.find('.current-item-description');
-		$description.addClass('completed')
-		var templateCheckMark = _.template("<a href='#'><i class='fa fa-check-circle-o margin-left-20 margin-right-20 transparent-1-4'><i/></a>");
-		$toggleToCheck.html(templateCheckMark)
+		$description.addClass('completed');
+		var templateCheckMark = _.template("<a class='margin-left-20 margin-right-20' href='/#'><i class='fa fa-check-square transparent-1-4'><i/></a>");
+		$toggleToCheck.html(templateCheckMark);
 	},
 
 	changeToCompleted: function(){
