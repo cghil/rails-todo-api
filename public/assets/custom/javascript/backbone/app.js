@@ -1,4 +1,4 @@
 var app = app || {};
 $(function(){
-	new app.AppView();
+	app.View = new app.AppView();
 })
