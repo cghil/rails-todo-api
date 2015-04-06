@@ -23,11 +23,8 @@ app.AppView = Backbone.View.extend({
 	},
 
 	render: function() {
-		var todos = app.Todos
-		var completed = todos.completed().length
-		if (todos.length === completed && todos.length !== 0) {
-			this.showAllAreCompleted();
-		}
+		this.checkIfAllTodosAreCompleted();
+		return this
 // need to finish render function
 	},
 
@@ -43,40 +40,38 @@ app.AppView = Backbone.View.extend({
 	},
 
 	toggleAllToComplete: function(){
-		debugger
-		var $icon = this.$el.find('#toggle-all');
-		var todos = app.Todos.models;
-		todos.forEach(saveTodo)
-		function saveTodo(todo){
-			todo.set({'done': true});
-			todo.save();
+		var todos = app.Todos.models
+		if (this.checkIfAllTodosAreCompleted() === true) {
+			todos.forEach(function (todo){
+				todo.set({'done': false})
+				todo.save();
+			})
+			this.showAllAreActive();
 		}
-		this.showAllAreCompleted();
-		$(this.el).undelegate('#toggle-all', 'click');
-		// $icon.off('click')
-		var that = this
-		$icon.on('click', function(){
-			that.toggleAllToActive()
-			$(this).off('click')
-			$(this).on('click', that.toggleAllToComplete)
+		if (this.checkIfAllTodosAreCompleted() === false){
+			debugger
+			todos.forEach(function (todo){
+				todo.set({'done': true});
+				todo.save()
+			})
+			this.showAllAreCompleted();
+		}
+	},
 
-			// delegate an event to the icon for making all Active
-		debugger
-		})
+	checkIfAllTodosAreCompleted: function() {
+		var todos = app.Todos
+		var completed = todos.completed().length
+		if (todos.length === completed && todos.length !== 0) {
+			this.showAllAreCompleted();
+			return true;
+		} else {
+			this.showAllAreActive();
+			return false;
+		}
 	},
 
 	showAllAreActive: function(){
 		this.$el.find('#toggle-all').removeClass('fa-bullseye').addClass('fa-circle-o');
-	},
-
-	toggleAllToActive: function(){
-		var todos = app.Todos.models;
-		todos.forEach(saveTodo)
-		function saveTodo(todo){
-			todo.set({'done': false});
-			todo.save();
-		}
-		this.showAllAreActive();
 	},
 
 	// add a single todo item to the list by creating a view
@@ -94,10 +89,6 @@ app.AppView = Backbone.View.extend({
 		app.Todos.fetch()
 		app.Todos.each(this.addOne, this);
 	},
-
-	// clickedThisFuckingThing: function(){
-	// 	console.log('yes i clicked this ')
-	// }
 
 	createOnEnter: function(event){
 		console.log('working')
