@@ -9,6 +9,7 @@ var TodoList = Backbone.Collection.extend({
 	completed: function(){
 		return this.where({done: true});
 	},
+
 	active: function(){
 		return this.where({done: false});
 	},
