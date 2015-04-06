@@ -7,7 +7,8 @@ app.TodoView = Backbone.View.extend({
 	template: _.template( $('#item-template').html() ),
 
 	initialize: function(){
-		this.listenTo(this.model, 'change', this.render)
+		this.listenTo(this.model, 'change', this.render);
+		this.listenTo(this.model, 'destroy', this.remove)
 	},
 
 	events: {
@@ -16,7 +17,8 @@ app.TodoView = Backbone.View.extend({
 		'mouseover button': 'makeButtonVisible',
 		'mouseout button': 'makeButtonClear',
 		'mouseover .todo-item': 'showButton',
-		'mouseout .todo-item': 'hideButton'
+		'mouseout .todo-item': 'hideButton',
+		'click button': 'destroyTodo'
 	},
 
 	render: function(){
@@ -52,6 +54,10 @@ app.TodoView = Backbone.View.extend({
 	makeButtonVisible: function(){
 		var $button = this.$el.find('button');
 		$button.css('opacity', 1)
+	},
+
+	destroyTodo: function(){
+		this.model.destroy()
 	},
 
 	makeCompleted: function(){
