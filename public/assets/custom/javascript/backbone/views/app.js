@@ -40,26 +40,22 @@ app.AppView = Backbone.View.extend({
 	},
 
 	toggleAllToComplete: function(){
-		// debugger
-		// var $icon = this.$el.find('#toggle-all');
-		// var todos = app.Todos.models;
-		// todos.forEach(saveTodo)
-		// function saveTodo(todo){
-		// 	todo.set({'done': true});
-		// 	todo.save();
-		// }
-		// this.showAllAreCompleted();
-		// $(this.el).undelegate('#toggle-all', 'click');
-		// // $icon.off('click')
-		// var that = this
-		// $icon.on('click', function(){
-		// 	that.toggleAllToActive()
-		// 	$(this).off('click')
-		// 	$(this).on('click', that.toggleAllToComplete)
-
-			// delegate an event to the icon for making all Active
-		debugger
-		})
+		var todos = app.Todos.models
+		if (this.checkIfAllTodosAreCompleted() === true) {
+			todos.forEach(function (todo){
+				todo.set({'done': false})
+				todo.save();
+			})
+			this.showAllAreActive();
+		}
+		if (this.checkIfAllTodosAreCompleted() === false){
+			debugger
+			todos.forEach(function (todo){
+				todo.set({'done': true});
+				todo.save()
+			})
+			this.showAllAreCompleted();
+		}
 	},
 
 	checkIfAllTodosAreCompleted: function() {
@@ -67,23 +63,15 @@ app.AppView = Backbone.View.extend({
 		var completed = todos.completed().length
 		if (todos.length === completed && todos.length !== 0) {
 			this.showAllAreCompleted();
+			return true;
 		} else {
 			this.showAllAreActive();
+			return false;
 		}
 	},
 
 	showAllAreActive: function(){
 		this.$el.find('#toggle-all').removeClass('fa-bullseye').addClass('fa-circle-o');
-	},
-
-	toggleAllToActive: function(){
-		var todos = app.Todos.models;
-		todos.forEach(saveTodo)
-		function saveTodo(todo){
-			todo.set({'done': false});
-			todo.save();
-		}
-		this.showAllAreActive();
 	},
 
 	// add a single todo item to the list by creating a view
