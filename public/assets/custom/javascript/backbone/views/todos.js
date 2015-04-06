@@ -11,8 +11,12 @@ app.TodoView = Backbone.View.extend({
 	},
 
 	events: {
-		'mouseover .single-todo-item': 'showDeleteButton',
-		'click .toggle-done': 'changeToCompleted'
+		// 'mouseover .single-todo-item': 'showDeleteButton',
+		'click .toggle-done': 'changeToCompleted',
+		'mouseover button': 'makeButtonVisible',
+		'mouseout button': 'makeButtonClear',
+		'mouseover .todo-item': 'showButton',
+		'mouseout .todo-item': 'hideButton'
 	},
 
 	render: function(){
@@ -24,10 +28,30 @@ app.TodoView = Backbone.View.extend({
 		return this
 	},
 
-	showDeleteButton: function(){
-		debugger;
-		$containerDescription = this.$el.find('.description-container')
-		$("<button class='button-xsmall pure-button button-error'><i class='fa fa-trash-o'></i> Delete</button>").appendTo($containerDescription)
+	// showDeleteButton: function(){
+	// 	debugger;
+	// 	$containerDescription = this.$el.find('.description-container')
+	// 	$("<button class='button-xsmall pure-button button-error'><i class='fa fa-trash-o'></i> Delete</button>").appendTo($containerDescription)
+	// },
+
+	showButton: function(){
+		$button = this.$el.find('button');
+		$button.removeClass('hide');
+	},
+
+	hideButton: function(){
+		$button = this.$el.find('button');
+		$button.addClass('hide');
+	},
+
+	makeButtonClear: function(){
+		var $button = this.$el.find('button');
+		$button.css('opacity', 0.5)
+	},
+
+	makeButtonVisible: function(){
+		var $button = this.$el.find('button');
+		$button.css('opacity', 1)
 	},
 
 	makeCompleted: function(){

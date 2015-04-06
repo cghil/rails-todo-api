@@ -46,6 +46,10 @@
   background: rgb(223, 117, 20); /* this is an orange */
 }
 
+ .button-error {
+  background: rgb(202, 60, 60); /* this is a maroon */
+}
+
 .yellow-notebook-page {
   background: #fcf0ad;
 }
@@ -67,6 +71,9 @@
   margin-right: 20px;
 }
 
+.margin-right-10 {
+  margin-right: 10px;
+}
 .transparent-1-4 {
   opacity: 0.25;
 }
@@ -126,6 +133,14 @@
   text-align: justify;
 }
 
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
 .side-menu-custom a{
   color: #999;
   border: none;
@@ -151,4 +166,8 @@
 	display: inline-block;
 	background: #191818;
   height: 100vh;
+}
+
+.hide {
+  visibility: hidden;
 }

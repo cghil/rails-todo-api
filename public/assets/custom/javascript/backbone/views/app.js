@@ -19,6 +19,7 @@ app.AppView = Backbone.View.extend({
 		this.listenTo(app.Todos, 'add', this.addOne)
 		this.listenTo(app.Todos, 'reset', this.addAll);
 		this.listenTo(app.Todos, 'all', this.render);
+		// this.listenTo(app.Todos, '')
 	},
 
 	render: function() {
@@ -42,6 +43,7 @@ app.AppView = Backbone.View.extend({
 	},
 
 	toggleAllToComplete: function(){
+		debugger
 		var $icon = this.$el.find('#toggle-all');
 		var todos = app.Todos.models;
 		todos.forEach(saveTodo)
@@ -59,6 +61,7 @@ app.AppView = Backbone.View.extend({
 			$(this).on('click', that.toggleAllToComplete)
 
 			// delegate an event to the icon for making all Active
+		debugger
 		})
 	},
 
