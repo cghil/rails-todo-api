@@ -47,9 +47,7 @@ app.AppView = Backbone.View.extend({
 				todo.save();
 			})
 			this.showAllAreActive();
-		}
-		if (this.checkIfAllTodosAreCompleted() === false){
-			debugger
+		}else {
 			todos.forEach(function (todo){
 				todo.set({'done': true});
 				todo.save()
