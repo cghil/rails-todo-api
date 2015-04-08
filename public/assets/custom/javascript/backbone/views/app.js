@@ -45,6 +45,9 @@ app.AppView = Backbone.View.extend({
 			todos.forEach(function (todo){
 				todo.set({'done': false})
 				todo.save();
+				// it is making another model here I believe within the database... I need to fix this
+				// rails does not recognize that backbone model for new todos is the same. Instead it thinks it is a new one everytime
+				// something is saved
 			})
 			this.showAllAreActive();
 		}else {
@@ -89,11 +92,12 @@ app.AppView = Backbone.View.extend({
 	},
 
 	createOnEnter: function(event){
-		console.log('working')
-		if (event.which !==13 || !this.$input.val().trim() ) {
+		if (event.which === 13) {
+			var newTodo = app.Todos.create( this.newAttributes() );
+			console.log('created')	
+		} else {
 			return;
 		}
-		app.Todos.create( this.newAttributes() );
 		this.$input.val('');
 	}
 })

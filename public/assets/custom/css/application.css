@@ -1,3 +1,8 @@
+a.filters {
+  text-decoration: none;
+  color: black;
+} 
+
 .helveticaneue {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; 
 }
@@ -44,6 +49,10 @@
 
 .button-warning {
   background: rgb(223, 117, 20); /* this is an orange */
+}
+
+.button-secondary {
+  background: rgb(198,226,255); /* this is a light blue */
 }
 
  .button-error {
@@ -105,10 +114,6 @@
   border-bottom: 1px solid #87CEEB;
   font-size: 25px;
   height: 65px;
-}
-
-.todo-list-footer {
-
 }
 
 .center-todo {
