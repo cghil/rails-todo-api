@@ -12,6 +12,8 @@ app.AppView = Backbone.View.extend({
 		'click #toggle-all': 'toggleAllToComplete'
 	},
 
+	footerTemplate: _.template($('#footer-template').html()),
+
 	initialize: function(){
 		var todos = app.Todos
 		todos.fetch();
@@ -23,6 +25,13 @@ app.AppView = Backbone.View.extend({
 	},
 
 	render: function() {
+		// var numberCompleted = app.Todos.completed().length
+		// numberCompleted = { completed: numberCompleted, poop: "Poop Yo!" }
+
+		// if (app.Todos.length) {
+		// 	this.$('.todo-footer').html(this.footerTemplate(numberCompleted))
+		// }
+
 		this.checkIfAllTodosAreCompleted();
 		return this
 // need to finish render function
