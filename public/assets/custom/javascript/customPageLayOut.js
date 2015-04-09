@@ -43,3 +43,5 @@ $(document).ready(function(){
 	}
 	toggleSideMenu();
 });
+
+var counter = 0

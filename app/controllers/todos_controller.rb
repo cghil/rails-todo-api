@@ -10,8 +10,8 @@ class TodosController < ApplicationController
   end
 
   def create
-    @todos = Todo.create(todo_params)
-    render json: { alert: "New item has been created"}
+    @todo = Todo.create(todo_params)
+    render json: @todo
   end
 
   def done
