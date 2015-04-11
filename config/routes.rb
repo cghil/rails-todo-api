@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
 
   resources :todos
-  resources :account, :controller => 'users', :only => [:new, :create]
+  resources :account, :controller => 'users', :only => [:create]
 
+  get 'account/:id' => 'users#show'
 
   patch 'todos/:id' => 'todos#done'
   patch 'todos/:id' => 'todos#not_done'

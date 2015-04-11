@@ -68,6 +68,7 @@
 			</div>
 		</div>
 	</div>
+
 	<script type="text/template" id='footer-template'>
 		<ul class="remove-bullets text-center helveticaneue" id="filters">
 			<% if (completed) {%>
@@ -80,6 +81,44 @@
 			<div class="pure-g center-todo">
 				<div class="pure-u-1-8 toggle-done"><a class='margin-left-20 margin-right-20' href='/#'><i class="fa fa-square-o transparent-1-4"></i></a></div>
 				<div class="description-container pure-u-7-8"><span class="current-item-description edit-description"><%=description%></span><button class="button-xsmall pure-button button-error float-right margin-right-10 transparent-1-4 hide"><i class="fa fa-trash-o"></i></button></div>
+			</div>
+		</div>
+	</script>
+	<script type="text/template" id="signup">
+		<div id="signup">
+			<div class="text-center">
+				<h1 class='header'>todo, please.</h1>
+			</div>
+			<div class="pure-g">
+				<div class="pure-u-1-3"></div>
+				<div class="pure-u-1-3">
+					<form class="pure-form pure-form-aligned">
+						<fieldset>
+							<div class="pure-control-group">
+								<label for="name">Name</label>
+								<input id="name" type="text" placeholder="Name, please."></input>
+							</div>
+
+							<div class="pure-control-group">
+								<label for="password">Password</label>
+								<input id="password" type="password" placeholder="Password, please."></input>
+							</div>
+
+							<div class="pure-control-group">
+								<label for="email">Email</label>
+								<input id="email" type="email", placeholder="Email, please."></input>
+							</div>
+							<div class="pure-g">
+								<div class="pure-u-1-3"></div>
+								<div class="pure-u-1-3">
+									<button type="submit" class="pure-button pure-button-primary">Submit</button>
+								</div>
+								<div class="pure-u-1-3"></div>
+							</div>
+						</fieldset>
+					</form>
+				</div>
+				<div class="pure-u-1-3"></div>
 			</div>
 		</div>
 	</script>
