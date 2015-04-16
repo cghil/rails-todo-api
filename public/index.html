@@ -75,6 +75,7 @@
 		    	<li class="pure-menu-item"><a href="#" class="pure-menu-link"> Logout </a></li>
 		  	<%} %>
 	</script>
+
 	<script type="text/template" id="item-template">
 		<div class="todo-item blue-border-bottom">
 			<div class="pure-g center-todo">
@@ -84,15 +85,104 @@
 		</div>
 	</script>
 
+	<script type="text/template" id="loginbuttons">
+		<div class="pure-g">
+			<div class="pure-u-1-4"></div>
+			<div class="pure-u-1-2">
+				<h1 class="text-center header margin-bottom-15"> <span class="black-text">this is</span> todo, please.</h1>
+				<p class="text-center helveticaneue transparent-1-2"><i>a simple todo list application</i></p>
+				<div class="text-center">
+					<button id="signup-button" class="pure-button pure-button-primary">Create An Account</button>
+					<p class="text-center inline-element">or</p>
+					<button id="signin-button" class="pure-button button-secondary">Sign In</button>
+				</div>
+			</div>
+			<div class="pure-u-1-4"></div>
+		</div>
+	</script>
+
+	<script type="text/template" id="signin">
+		<div id="signin">
+			<div class="text-center">
+			<h1 class='header'>sign in for. todo, please.</h1>
+			</div>
+			<div class="pure-g">
+				<div class="pure-u-1-3"></div>
+				<div class="pure-u-1-3">
+					<form class="pure-form pure-form-aligned">
+						<fieldset>
+							<div class="pure-control-group">
+								<label for="email">Email</label>
+								<input id="email" type="email" placeholder="Email, please."></input>
+							</div>
+							<div class="pure-control-group">
+								<label for="password">Password</label>
+								<input id="password" type="password" placeholder="Password, please."></input>
+							</div>	
+							<div class="pure-g">
+								<div class="pure-u-1-3"></div>
+								<div class="pure-u-1-3">
+									<button type="submit" class="pure-button pure-button-primary">Submit</button>
+								</div>
+								<div class="pure-u-1-3"></div>
+							</div>
+						</fieldset>
+					</form>
+				</div>
+				<div class="pure-u-1-3"></div>
+			</div>
+		</div>
+	</script>
+
+	<script type="text/template" id="signup">
+		<div id="signup">
+			<div class="text-center">
+				<h1 class='header'>sign up for todo, please.</h1>
+			</div>
+			<div class="pure-g">
+				<div class="pure-u-1-3"></div>
+				<div class="pure-u-1-3">
+					<form class="pure-form pure-form-aligned">
+						<fieldset>
+							<div class="pure-control-group">
+								<label for="name">Name</label>
+								<input id="name" type="text" placeholder="Name, please."></input>
+							</div>
+
+							<div class="pure-control-group">
+								<label for="password">Password</label>
+								<input id="password" type="password" placeholder="Password, please."></input>
+							</div>
+
+							<div class="pure-control-group">
+								<label for="email">Email</label>
+								<input id="email" type="email", placeholder="Email, please."></input>
+							</div>
+							<div class="pure-g">
+								<div class="pure-u-1-3"></div>
+								<div class="pure-u-1-3">
+									<button type="submit" class="pure-button pure-button-primary">Submit</button>
+								</div>
+								<div class="pure-u-1-3"></div>
+							</div>
+						</fieldset>
+					</form>
+				</div>
+				<div class="pure-u-1-3"></div>
+			</div>
+		</div>
+	</script>
+
 	<script src="assets/vendor/javascript/jquery.js"></script>
 	<script src="assets/vendor/javascript/underscore.js"></script>
 	<script src="assets/vendor/javascript/backbone.js"></script>
 	<script src="assets/custom/javascript/backbone/models/todo.js"></script>
-	<script src="assets/custom/javascript/backbone/models/user.js"></script>
 	<script src="assets/custom/javascript/backbone/collections/todos.js"></script>
-	<script src="assets/custom/javascript/backbone/app.js"></script>
+	<script src="assets/custom/javascript/backbone/views/loginbuttons.js"></script>
 	<script src="assets/custom/javascript/backbone/views/todos.js"></script>
 	<script src="assets/custom/javascript/backbone/views/app.js"></script>
+	<script src="assets/custom/javascript/backbone/app.js"></script>
+	<script src="assets/custom/javascript/backbone/mixins.js"></script>
 	<script src="assets/custom/javascript/customPageLayOut.js"></script>
 </body>
 </html>
