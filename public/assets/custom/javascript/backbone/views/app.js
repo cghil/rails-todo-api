@@ -12,8 +12,6 @@ app.AppView = Backbone.View.extend({
 		'click #toggle-all': 'toggleAllToComplete'
 	},
 
-	footerTemplate: _.template($('#footer-template').html()),
-
 	initialize: function(){
 		var todos = app.Todos
 		todos.fetch();
