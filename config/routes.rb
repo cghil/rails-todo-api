@@ -9,7 +9,9 @@ Rails.application.routes.draw do
   match 'signup' => 'user#new', :via => :get
   resources :account, :controller => 'users', :only => [:new, :create]
 
-  get 'signin' => 'user#signin'
+  get 'account/signin' => 'user#signin'
+
+  get 'account/authenticate' => 'user#authenticate_user'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

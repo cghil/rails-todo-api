@@ -21,6 +21,15 @@ class UsersController < ApplicationController
 		end
 	end
 
+	def authenticate_user
+		user = User.find(params[:user_id])
+		if user.nil?
+			render json: {note: "authentication failed"}
+		else
+			render json: {note: "authentication successful"}
+		end
+	end
+
 	private
 	def user_params
 		params.permit(:username, :email, :password)
