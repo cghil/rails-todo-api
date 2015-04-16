@@ -1,11 +1,12 @@
 var app = app || {};
 
 app.LoginButtons = Backbone.View.extend({
-	className: "container",
+	className: "container-signin-signup",
 	template: _.template($('#loginbuttons').html()),
 
 	render: function(){
 		this.$el.html(this.template());
+		return this
 	},
 
 	events: {
