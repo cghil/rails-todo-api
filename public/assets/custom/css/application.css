@@ -1,7 +1,11 @@
 a.filters {
   text-decoration: none;
   color: black;
-} 
+}
+
+.black-text {
+  color: black;
+}
 
 .helveticaneue {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; 

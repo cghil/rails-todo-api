@@ -5,6 +5,13 @@ Rails.application.routes.draw do
 
   patch 'todos/:id' => 'todos#done'
   patch 'todos/:id' => 'todos#not_done'
+
+  match 'signup' => 'user#new', :via => :get
+  resources :account, :controller => 'users', :only => [:new, :create]
+
+  get 'account/signin' => 'user#signin'
+
+  get 'account/authenticate' => 'user#authenticate_user'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

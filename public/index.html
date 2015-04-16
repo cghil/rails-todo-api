@@ -68,12 +68,12 @@
 			</div>
 		</div>
 	</div>
-	<script type="text/template" id='footer-template'>
-		<ul class="remove-bullets text-center helveticaneue" id="filters">
-			<% if (completed) {%>
-			<li class="inline-element"> <button id='clear-completed' class="pure-button button-secondary">Clear Completed (<%completed%>) </button></li>
-			<% } %>
-		</ul>
+
+
+	<script type="text/template" id="logout">
+		    <% if (sessionStorage.length >= 1) { %>
+		    	<li class="pure-menu-item"><a href="#" class="pure-menu-link"> Logout </a></li>
+		  	<%} %>
 	</script>
 	<script type="text/template" id="item-template">
 		<div class="todo-item blue-border-bottom">
@@ -83,14 +83,16 @@
 			</div>
 		</div>
 	</script>
-	<script src="/assets/vendor/javascript/jquery.js"></script>
-	<script src="/assets/vendor/javascript/underscore.js"></script>
-	<script src="/assets/vendor/javascript/backbone.js"></script>
-	<script src="/assets/custom/javascript/backbone/models/todo.js"></script>
-	<script src="/assets/custom/javascript/backbone/collections/todos.js"></script>
-	<script src="/assets/custom/javascript/backbone/app.js"></script>
-	<script src="/assets/custom/javascript/backbone/views/todos.js"></script>
-	<script src="/assets/custom/javascript/backbone/views/app.js"></script>
-	<script src="/assets/custom/javascript/customPageLayOut.js"></script>
+
+	<script src="assets/vendor/javascript/jquery.js"></script>
+	<script src="assets/vendor/javascript/underscore.js"></script>
+	<script src="assets/vendor/javascript/backbone.js"></script>
+	<script src="assets/custom/javascript/backbone/models/todo.js"></script>
+	<script src="assets/custom/javascript/backbone/models/user.js"></script>
+	<script src="assets/custom/javascript/backbone/collections/todos.js"></script>
+	<script src="assets/custom/javascript/backbone/app.js"></script>
+	<script src="assets/custom/javascript/backbone/views/todos.js"></script>
+	<script src="assets/custom/javascript/backbone/views/app.js"></script>
+	<script src="assets/custom/javascript/customPageLayOut.js"></script>
 </body>
 </html>
