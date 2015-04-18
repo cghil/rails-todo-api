@@ -32,15 +32,17 @@ app.signIn = Backbone.View.extend({
 	},
 
 	createSession: function(reply){
-		debugger
 		if (isNaN(reply.user_id) === false) {
 			sessionStorage.setItem('user_id', reply.user_id)
 			sessionStorage.setItem('username', reply.username)
-		} else {
+		} else if (reply.message !== undefined){
+			var errors = reply.message
+			var compileErrors = _.template('<p class="text-center helveticaneue red-text"><%=text%></p>');
+			$('#form-holder').prepend(compileErrors({text: errors}));
+		}else {
 			var errors = reply.errors
-			debugger
-			var compileErrors = _.template('<p class="text-center helveticaneue"><%=error=%></p>');
-			$('#form-holder').prepend(compileErrors({error: reply.errors}));
+			var compileErrors = _.template('<p class="text-center helveticaneue red-text"><%=text%></p>');
+			$('#form-holder').prepend(compileErrors({text: errors}));
 		}
 	}
 
