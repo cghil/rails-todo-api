@@ -7,6 +7,10 @@ a.filters {
   color: black;
 }
 
+.red-text {
+  color: red;
+}
+
 .helveticaneue {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; 
 }
@@ -87,12 +91,21 @@ a.filters {
 .margin-right-10 {
   margin-right: 10px;
 }
+
 .transparent-1-4 {
   opacity: 0.25;
 }
 
+.transparent-1-2 {
+  opacity: 0.5;
+}
+
 .remove-bullets {
   list-style-type: none;
+}
+
+.margin-bottom-15 {
+  margin-bottom: 15px;
 }
 
 #new-todo {

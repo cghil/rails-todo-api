@@ -15,11 +15,14 @@ app.LoginButtons = Backbone.View.extend({
 	},
 
 	addButtons: function(){
-	 $('boby').append(this.render())
+		$('div#maingrid').hide();
+		this.render()
+		$('body').append(this.$el)
 	},
 
 	renderSignInForm: function(){
-		debugger;
+		var signInToAccount = new app.signIn();
+		signInToAccount.render();
 	},
 
 	renderSignUpForm: function(){
