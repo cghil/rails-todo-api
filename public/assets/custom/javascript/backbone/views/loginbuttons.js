@@ -23,7 +23,6 @@ app.LoginButtons = Backbone.View.extend({
 	renderSignInForm: function(){
 		var signInToAccount = new app.signIn();
 		signInToAccount.render();
-		debugger;
 	},
 
 	renderSignUpForm: function(){

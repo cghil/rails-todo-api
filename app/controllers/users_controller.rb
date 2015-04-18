@@ -13,8 +13,8 @@ class UsersController < ApplicationController
 	end
 
 	def signin
-		@user = User.find_by(signin_username_params)
-		if @user.authenticate(signin_password_params)
+		@user = User.find_by(email: signin_email_and_password_params[:email])
+		if @user.authenticate(signin_email_and_password_params[:password])
 			render json: {user_id: @user.id, username: @user.username}
 		else
 			render json: {errors: "Account log in failed."}
@@ -35,12 +35,8 @@ class UsersController < ApplicationController
 		params.permit(:username, :email, :password)
 	end
 
-	def signin_username_params
-		params.permit(:username)
-	end
-
-	def signin_password_params
-		params.permit(:password)
+	def signin_email_and_password_params
+		params.permit(:email, :password)
 	end
 
 	def user_id_params
