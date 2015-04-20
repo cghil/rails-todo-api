@@ -1,10 +1,6 @@
 $(document).ready(function(){
 	function inputBoxWithChange(){
-		var width = $('.layer-paper').width();
-		var $inputBoxDiv = $('#input-box-new-todo');
-		var $inputBox = $('#new-todo');
-		$inputBoxDiv.css("width", width);
-		$inputBox.css("width", width-63);
+		inputResizer();
 	}
 	$(window).resize(inputBoxWithChange);
 	inputBoxWithChange();

@@ -35,16 +35,21 @@ app.signIn = Backbone.View.extend({
 		if (isNaN(reply.user_id) === false) {
 			sessionStorage.setItem('user_id', reply.user_id)
 			sessionStorage.setItem('username', reply.username)
+			// setting the items for sessionStorage
+			$('div#sign').remove();
+			$('#maingrid').show();
+			inputResizer();
 		} else if (reply.message !== undefined){
+			$('.errors-signin').remove()
 			var errors = reply.message
-			var compileErrors = _.template('<p class="text-center helveticaneue red-text"><%=text%></p>');
+			var compileErrors = _.template('<p class="errors-signin text-center helveticaneue red-text"><%=text%></p>');
 			$('#form-holder').prepend(compileErrors({text: errors}));
 		}else {
+			$('.errors-signin').remove()
 			var errors = reply.errors
-			var compileErrors = _.template('<p class="text-center helveticaneue red-text"><%=text%></p>');
+			var compileErrors = _.template('<p class="errors-signin text-center helveticaneue red-text"><%=text%></p>');
 			$('#form-holder').prepend(compileErrors({text: errors}));
 		}
 	}
-
 
 })
