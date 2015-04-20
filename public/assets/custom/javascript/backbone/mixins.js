@@ -8,3 +8,11 @@ var checkForUser = {
 		}
 	}
 }
+
+var inputResizer = function(){
+	var width = $('.layer-paper').width();
+	var $inputBoxDiv = $('#input-box-new-todo');
+	var $inputBox = $('#new-todo');
+	$inputBoxDiv.css("width", width);
+	$inputBox.css("width", width-63);
+}
