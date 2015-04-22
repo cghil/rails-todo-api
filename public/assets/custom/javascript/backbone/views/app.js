@@ -14,7 +14,7 @@ app.AppView = Backbone.View.extend({
 
 	initialize: function(){
 		var todos = app.Todos
-		todos.fetch();
+		todos.fetch({data: {user_id: sessionStorage.getItem('user_id')}});
 		this.$input = this.$('#new-todo');
 		this.listenTo(app.Todos, 'add', this.addOne)
 		this.listenTo(app.Todos, 'reset', this.addAll);
@@ -38,7 +38,8 @@ app.AppView = Backbone.View.extend({
 	newAttributes: function(){
 		return {
 			description: this.$input.val().trim(),
-			done: false
+			done: false,
+			user_id: sessionStorage.getItem('user_id')
 		};
 	},
 
@@ -94,7 +95,7 @@ app.AppView = Backbone.View.extend({
 
 	addAll: function(){
 		this.$('#todo-list-items').html('');
-		app.Todos.fetch()
+		app.Todos.fetch({data: {user_id: sessionStorage.getItem('user_id')}})
 		app.Todos.each(this.addOne, this);
 	},
 
