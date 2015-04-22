@@ -1,5 +1,6 @@
 var app = app || {};
 $(function(){
-	checkForUser.checkSession();
-	app.View = new app.AppView();
+	if (checkForUser.checkSession()) {
+		app.View = new app.AppView();
+	}
 })

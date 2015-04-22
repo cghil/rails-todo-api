@@ -38,6 +38,14 @@ $(document).ready(function(){
 		}
 	}
 	toggleSideMenu();
+
+
+	function logOut(){
+		sessionStorage.clear();
+		checkForUser.checkSession();
+	}
+
+	$('a#logout').on('click', logOut)
 });
 
 var counter = 0
