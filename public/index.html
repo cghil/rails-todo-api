@@ -138,7 +138,7 @@
 	<script type="text/template" id="signup">
 		<div id="signup">
 			<div class="text-center">
-				<h1 class='header'>sign up for todo, please.</h1>
+				<h1 class='header margin-bottom-15'> <span class="black-text">sign up for </span> todo, please.</h1>
 			</div>
 			<div class="pure-g">
 				<div class="pure-u-1-3"></div>
@@ -151,14 +151,20 @@
 							</div>
 
 							<div class="pure-control-group">
+								<label for="email">Email</label>
+								<input id="email" type="email", placeholder="Email, please."></input>
+							</div>
+
+							<div class="pure-control-group">
 								<label for="password">Password</label>
 								<input id="password" type="password" placeholder="Password, please."></input>
 							</div>
 
 							<div class="pure-control-group">
-								<label for="email">Email</label>
-								<input id="email" type="email", placeholder="Email, please."></input>
+								<label for="password">Password Confirmation</label>
+								<input id="password_confirmation" type="password" placeholder="Confirm, please."></input>
 							</div>
+
 							<div class="pure-g">
 								<div class="pure-u-1-3"></div>
 								<div class="pure-u-1-3">
@@ -182,6 +188,7 @@
 	<script src="assets/custom/javascript/backbone/views/loginbuttons.js"></script>
 	<script src="assets/custom/javascript/backbone/views/todos.js"></script>
 	<script src="assets/custom/javascript/backbone/views/signin.js"></script>
+	<script src="assets/custom/javascript/backbone/views/signup.js"></script>
 	<script src="assets/custom/javascript/backbone/views/app.js"></script>
 	<script src="assets/custom/javascript/backbone/app.js"></script>
 	<script src="assets/custom/javascript/backbone/mixins.js"></script>
