@@ -42,10 +42,10 @@ $(document).ready(function(){
 
 	function logOut(){
 		sessionStorage.clear();
+		app.View.destroyView();
+		$('#insert-app-below').after("<div class='pure-u-3-5' id='todoapp'><div class='text-center'><h1 class='header'>todo, please.</h1></div><div class='yellow-notebook-page'><div id='input-box-new-todo'><div class='inline-element margin-left-20 margin-right-20 transparent-1-4'><a href='/#'><i id='toggle-all' class='fa fa-circle-o fa-lg'></i></a></div><input id='new-todo' class='inline-element' placeholder='What needs to be done?' autofocus></div><div id='todo-list-items'></div><div class='todo-footer'></div><div class='layer-paper'><br></div></div><br><div class='text-center toggle-menu-button'><button class='pure-button primary-button' id='toggle-menu-button'>Toggle Menu</button></div></div>")
 		checkForUser.checkSession();
 	}
 
 	$('a#logout').on('click', logOut)
 });
-
-var counter = 0
