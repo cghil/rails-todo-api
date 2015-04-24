@@ -17,3 +17,17 @@ var inputResizer = function(){
 	$inputBoxDiv.css("width", width);
 	$inputBox.css("width", width-63);
 }
+
+
+var viewDestoryer = {
+	destroyView: function(){
+		this.undelegateEvents();
+
+		$(this.el).removeData().unbind();
+		this.remove();
+		Backbone.View.prototype.remove.call(this);
+	}
+}
+
+_.extend(app.AppView.prototype, viewDestoryer);
+_.extend(app.signIn.prototype, viewDestoryer);
