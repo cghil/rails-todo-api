@@ -37,8 +37,13 @@ app.signIn = Backbone.View.extend({
 			sessionStorage.setItem('username', reply.username)
 			// setting the items for sessionStorage
 			$('div.container-signin-signup').remove();
-			app.View = new app.AppView();
 			$('#maingrid').show();
+			app.View = new app.AppView();
+			app.View.addAll();
+			var userId = app.Todos.at(0).get('user_id');
+			if (userId != sessionStorage.getItem('user_id') && userId !== undefined){
+				$('.todo-item').remove()
+			}
 			inputResizer();
 		} else if (reply.message !== undefined){
 			$('.errors-signin').remove()
