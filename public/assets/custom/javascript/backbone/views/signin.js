@@ -1,7 +1,7 @@
 var app = app || {}
 
 app.signIn = Backbone.View.extend({
-	el: '.container-signin-signup', // can't use el because it is not on the 
+	el: '.container-signin-signup',
 	className: "sigin-form",
 
 	template: _.template($('#signin').html()),
